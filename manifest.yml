@@ -1,0 +1,12 @@
+---
+applications:
+- name: djangoapp
+  random-route: true
+  path: ./
+  memory: 512M
+  buildpacks: 
+  - python_buildpack
+  command: python djdemo/manage.py runserver 0.0.0.0:8080
+  health-check-type: http
+  health-check-http-endpoint: /diabetes_app
+  
